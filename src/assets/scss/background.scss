@@ -1,0 +1,34 @@
+@import 'colors';
+
+@each $color in $brand-colors {
+  .background-color-#{nth($color,1)} {
+    background-color: nth($color,2) ;
+  }
+}
+.background-repeat-no-repeat{
+  background-repeat: no-repeat;
+}
+.background-repeat-repeat{
+  background-repeat: repeat;
+}
+.background-position-center{
+  background-position: center;
+}
+.background-position-left{
+  background-position: left;
+}
+.background-position-right{
+  background-position: right;
+}
+.background-position-bottom{
+  background-position: bottom;
+}
+.background-position-top{
+  background-position: top;
+}
+.background-size-cover{
+ background-size: cover;
+}
+.background-size-contain{
+ background-size: contain;
+}

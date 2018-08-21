@@ -1,0 +1,44 @@
+.flex{
+  display: flex;
+}
+.block{
+  display: block ;
+}
+.inline-block{
+  display: inline-block ;
+}
+.inline-flex{
+  display: inline-flex ;
+}
+.align-items-center{
+  display: flex;
+  align-items: center;
+}
+.justify-content-center{
+  display: flex;
+  justify-content: center;
+}
+
+.align-items-top{
+  display: flex;
+  align-items: flex-start;
+}
+.justify-content-left{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.align-items-bottom{
+  display: flex;
+  align-items: flex-end;
+}
+.justify-content-right{
+  display: flex;
+  justify-content: flex-end;
+}
+
+@for $i from 0 through 12 {
+  .flex-#{$i} {
+    flex: #{$i};
+  }
+}

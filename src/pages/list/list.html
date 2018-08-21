@@ -1,0 +1,24 @@
+<header id="header">
+    <span menuToggle>
+      open Menu LIST
+    </span>
+</header>
+<main class="flex">  
+  <nav class="width-20" id="letter-list">
+    <ul >
+      <li *ngFor="let letter of (families | objectKeys); let i = index" class="{{'letter' + i}}" [ngClass]="{'active': active === i}"  (touchmove)="onDrag($event)" (click)="goTo(i)" >
+        <a class="{{i}}">{{letter}}</a>
+      </li>
+  </ul>
+  </nav>
+  <section *ngIf="families" id="families" class="width-80 left-20"  (touchstart)="userScroll = true" on-scroll="familyInView($event, true)" > 
+    <article *ngFor="let letter of (families | objectKeys)" class="align-items-top family-box">     
+      <ul>  
+          <li   *ngFor="let plant of families[letter]; let i = index">
+            <span (click)="itemTapped($event, plant.url, letter ,i)" >   {{plant.name}} </span>
+          </li>
+      </ul>
+    </article>
+  </section>
+</main><!-- 
+<app-wheel></app-wheel>     -->

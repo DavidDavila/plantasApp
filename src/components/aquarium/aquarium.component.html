@@ -1,0 +1,69 @@
+{{this.scale}}
+<section id="aquarium">
+  <div id="mainDiv" #mainDiv [ngStyle]="{
+  'height': '50vw'}">
+      <div id="boxDiv" [ngStyle]="{
+  'width': largo*2 - scale  + 'vw'}">
+
+          <div id="front"
+            #frontDiv
+            [ngStyle]="{
+            'width':(largo*2) * scale + 'vw',
+            'height':( alto*2)  * scale + 'vw' ,
+             'transform': 'translateZ(' + profundo * scale + 'vw)'
+            }"></div>
+
+          <div id="back"
+            [ngStyle]="{
+            'width':largo*2 * scale + 'vw' ,
+            'height':alto*2 * scale + 'vw' ,
+            'transform': 'rotateY(180deg) translateZ(' + profundo * scale + 'vw)'
+            }"
+          ></div>
+
+          <div id="left"
+            [ngStyle]="{
+              'width': profundo*2 * scale + 'vw',
+              'height': alto*2 * scale + 'vw',
+             'transform': 'rotateY(-90deg) translateX(' + (-profundo* scale ) + 'vw)'
+            }"
+          ></div>
+          <div id="right"
+            [ngStyle]="{
+            'width':profundo*2 * scale + 'vw',
+            'height':alto*2 * scale + 'vw',
+             'transform': 'rotateY(90deg) translateX(' + (profundo * scale) + 'vw) translateZ(' + ((profundo  - largo ) )*-2 * scale + 'vw)'
+            }"
+          ></div>
+          <div id="bottom"
+            [ngStyle]="{
+            'width':largo*2 * scale + 'vw',
+            'height':profundo*2 * scale + 'vw',
+             'transform': 'rotateX(90deg) translateY(' + profundo * scale + 'vw)  translateZ(' + ((profundo - alto )*2 * scale)+ 'vw)'
+            }"
+          ></div>
+      </div>
+  </div>
+
+  <h4>Alto: {{alto}} cm</h4>
+  <ion-item>
+    <ion-range min="0" max="200" [(ngModel)]="alto" color="secondary" (ngModelChange)="controlProportion(alto,'alto')">
+      <ion-label range-left>0</ion-label>
+      <ion-label range-right>200 cm</ion-label>
+    </ion-range>
+  </ion-item>
+  <h4>Largo: {{largo}} cm</h4>
+  <ion-item>
+    <ion-range min="0" max="200" [(ngModel)]="largo" color="secondary" (ngModelChange)="controlProportion(largo,'largo')">
+      <ion-label range-left>0</ion-label>
+      <ion-label range-right>200 cm</ion-label>
+    </ion-range>
+  </ion-item>
+  <h4>Profundo: {{profundo}} cm</h4>
+  <ion-item>
+    <ion-range min="0" max="200" [(ngModel)]="profundo" color="secondary" (ngModelChange)="controlProportion(profundo,'profundo')">
+      <ion-label range-left>0</ion-label>
+      <ion-label range-right>200 cm</ion-label>
+    </ion-range>
+  </ion-item>
+</section>

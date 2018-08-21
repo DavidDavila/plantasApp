@@ -1,0 +1,87 @@
+<header id="header">
+  <span menuToggle>
+      open Menu LIST
+    </span>
+  <nav id="navigation">
+    <span (click)="prevPage()"></span>
+    <span (click)="nextPage()"></span>
+  </nav>
+</header>
+<main #main (touchmove)="changeView($event)" (touchstart)="startTouching($event)" (touchend)="endTouching($event)" [ngStyle]="{
+          'transform': scale
+        }">
+  <section class="flex height-60 section1" *ngIf="plant" [ngClass]="{'showImg': showImg}">
+    <article id="name" class="width-37 position-relative">
+      <h3>{{plant.name}}
+      </h3>
+    </article>
+    <article class="width-63" (click)="showImg = !showImg">
+      <img [src]="'assets/imgs/' +plant.img" alt="">
+    </article>
+  </section>
+  <section class="flex height-40 ">
+    <article id="icon-list" class="width-37 background-color-black">
+      <div>
+        <div class="temperatura">
+          <span>{{plant.temperatura?.param[0]}} <sup>º</sup> </span>
+          <span> - </span>
+          <span>{{plant.temperatura?.param[1]}} <sup>º</sup></span>
+        </div>
+      </div>
+      <div>
+        <div class="icon light">
+          <span [ngStyle]="{'height': plant?.requerimientosluminicos?.param * 100 + '%'}"></span>
+        </div>
+        <p>
+          {{plant?.requerimientosluminicos?.param === 0.9? '1' :plant?.requerimientosluminicos?.param === 1? '+1' : plant?.requerimientosluminicos?.param }} <sub>w / l</sub>
+        </p>
+      </div>
+      <div>
+        <div class="icon co2">
+          <span [ngStyle]="{'height': plant?.co2?.param * 100 + '%'}"></span>
+        </div>
+        <p>
+          {{plant?.co2?.param === 0.9?
+            'Alto' :
+            plant?.co2?.param === 1?
+            'Muy Alto' :
+            plant?.co2?.param === 0.8?
+            'Medio - Alto' :
+            plant?.co2?.param === 0.5?
+            'Medio' :
+            plant?.co2?.param === 0.3?
+            'Bajo' :
+            plant?.co2?.param === 0?
+            'No necesario'
+            :
+             plant?.co2?.param }}
+        </p>
+      </div>
+    </article>
+    <article class="width-63" id="resumen">
+      <div class="phgh">
+        <span>
+          <p>Ph</p>
+          <b>{{plant?.agua?.param?.ph[0] }} - {{plant?.agua?.param?.ph[1]}}</b>
+        </span>
+        <span>
+          <p>Gh</p>
+          <b> {{plant?.agua?.param?.gh[0] }} - {{plant?.agua?.param?.gh[1]}}</b>
+        </span>
+      </div>
+
+      <div class="phgh">
+        <span>
+          <p>Crecimiento</p>
+          <b>{{plant?.crecimiento?.param}}
+
+          </b>
+        </span>
+        <span>
+          <p>Dificultad</p>
+          <b> {{plant?.dificultad?.param * 10 }}<span class="small"> / 10</span></b>
+        </span>
+      </div>
+    </article>
+  </section>
+</main>

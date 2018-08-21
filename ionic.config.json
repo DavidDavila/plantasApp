@@ -1,0 +1,7 @@
+{
+  "name": "plantasapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

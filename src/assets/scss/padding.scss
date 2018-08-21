@@ -1,0 +1,23 @@
+@import 'mixin';
+
+@for $i from 0 through 100 {
+  .padding-#{$i}px {
+    padding: calculateRem(#{$i});
+  }
+  .padding-left-#{$i}px {
+    padding-left: calculateRem(#{$i});
+  }
+
+  .padding-top-#{$i}px {
+    padding-top: calculateRem(#{$i});
+  }
+
+  .padding-right-#{$i}px {
+    padding-right: calculateRem(#{$i});
+  }
+
+  .padding-bottom-#{$i}px {
+    padding-bottom: calculateRem(#{$i});
+  }
+}
+

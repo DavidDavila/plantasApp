@@ -1,0 +1,28 @@
+@import 'colors';
+
+@for $i from 0 through 20 {
+  $number : $i;
+  .border-#{$i}px {
+    border: #{$i}px solid;
+  }
+  .border-top-#{$i}px {
+    border-top: #{$i}px solid;
+  }
+  .border-left-#{$i}px {
+    border-left: #{$i}px solid;
+  }
+  .border-right-#{$i}px {
+    border-right: #{$i}px solid;
+  }
+  .border-bottom-#{$i}px {
+    border-bottom: #{$i}px solid;
+  }
+}
+@each $color in $brand-colors {
+  .border-color-#{nth($color,1)} {
+    border-color: nth($color,2) ;
+  }
+}
+.border-radius-50{
+  border-radius: 50%;
+}

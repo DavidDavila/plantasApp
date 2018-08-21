@@ -1,0 +1,36 @@
+@import 'colors';
+@import 'mixin';
+
+@each $color in $brand-colors {
+  .color-#{nth($color,1)} {
+    color: nth($color,2);
+  }
+}
+
+@for $i from 1 through 100 {
+  .font-size-#{$i}px {
+    font-size: calculateRem(#{$i});
+  }
+}
+@for $i from 0 through 200 {
+  .line-height-#{$i}px {
+    line-height: calculateRem(#{$i});
+  }
+}
+
+@for $i from 1 through 9 {
+  $number: $i * 100;
+  .font-weight-#{$number} {
+    font-weight : #{$number};
+  }
+}
+.text-align-left{
+  text-align: left;
+}
+.text-align-right{
+  text-align: right;
+}
+.text-align-center{
+  text-align: center;
+}
+

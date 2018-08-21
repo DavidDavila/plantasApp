@@ -1,0 +1,43 @@
+.cursor-pointer{
+  cursor: pointer;
+}
+.cursor-default{
+  cursor: default;
+}
+.overflow-hidden{
+  overflow:hidden;
+}
+
+.overflow-auto{
+  overflow:auto;
+}
+.overflow-scroll{
+  overflow:scroll;
+}
+
+.overflow-x-hidden{
+  overflow-x:hidden;
+}
+.overflow-x-auto{
+  overflow-x:auto;
+}
+.overflow-x-scroll{
+  overflow-x:scroll;
+}
+
+.overflow-y-hidden{
+  overflow-y:hidden;
+}
+.overflow-y-auto{
+  overflow-y:auto;
+}
+.overflow-y-scroll{
+  overflow-y:scroll;
+}
+
+@for $i from 0 through 10 {
+  $number :$i/10;
+  .opacity-#{$i} {
+    opacity: #{$number};
+  }
+}

@@ -1,0 +1,83 @@
+
+@include mat-core();
+$green: (
+    50 : #fcfecd,
+    100 : #f6fd82,
+    200 : #f3fc4a,
+    300 : #eefb04,
+    400 : #d1dd03,
+    500 : #b5bf03,
+    600 : #98a103,
+    700 : #7c8302,
+    800 : #5f6502,
+    900 : #434601,
+    A100 : #fcffc2,
+    A200 : #f6ff5c,
+    A400 : #e8f500,
+    A700 : #d0db00,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+$gray:  (
+    50 : #ffffff,
+    100 : #ffffff,
+    200 : #ffffff,
+    300 : #f4f5e5,
+    400 : #eaedcf,
+    500 : #b5bf03,
+    600 : #d8dba3,
+    700 : #ced38d,
+    800 : #c5ca77,
+    900 : #bbc261,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #f4f6da,
+    A700 : #eaedca,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$primary: mat-palette($green);
+$accent: mat-palette($gray);
+$warn: mat-palette($mat-red);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+
+.dark-theme {
+  $dark-primary: mat-palette($mat-light-blue);
+  $dark-accent: mat-palette($mat-green);
+
+  $dark-theme: mat-dark-theme($dark-primary, $dark-accent);
+
+  @include angular-material-theme($dark-theme);
+}

@@ -1,0 +1,52 @@
+@import 'mixin';
+
+.position-absolute{
+  position: absolute;
+}
+.position-fixed{
+  position: fixed;
+}
+.position-relative{
+  position: relative;
+}
+.position-static{
+  position: static;
+}
+.vertical-align-top{
+  vertical-align: top;
+}
+.vertical-align-bottom{
+  vertical-align: bottom;
+}
+.vertical-align-middle{
+  vertical-align: middle;
+}
+@for $i from 5 through 100 {
+  $number :round(percentage($i/100 ));
+  .left-#{$i} {
+    left : #{$number};
+  }
+  .right-#{$i} {
+    right : #{$number};
+  }
+  .top-#{$i} {
+    top : #{$number};
+  }
+  .bottom-#{$i} {
+    bottom : #{$number};
+  }
+}
+@for $i from 1 through 100 {
+  .left-#{$i}px {
+    left : calculateRem(#{$i});;
+  }
+  .right-#{$i}px {
+    right : calculateRem(#{$i});;
+  }
+  .top-#{$i}px {
+    top : calculateRem(#{$i});;
+  }
+  .bottom-#{$i}px {
+    bottom : calculateRem(#{$i});;
+  }
+}
